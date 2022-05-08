@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
         });
         const comments = commentData.map((comment) => comment.get({ plain: true }));
         console.log(comments);
-        res.render('single-post', {comments, loggedIn: req.session.loggedIn});
+        res.render('single-post', {comments, logged_in: req.session.logged_in});
     } catch (err) {
         res.status(500).json(err);
     }
