@@ -20,13 +20,13 @@ router.get('/post/:id', withAuth, async (req, res) => {
             where: {id: req.params.id},
             include: [User, {
                 model: Comment,
-                include: [User],
+                include: User,
             },
         ],
         });
         if (postData) {
             const post = postData.get({ plain: true });
-            // console.log(post);
+            console.log(post);
             res.render('single-post', { post, loggedIn: req.session.loggedIn});
         } else {
             res.status(400).end();
