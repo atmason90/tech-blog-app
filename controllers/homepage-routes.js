@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
             include: User,
         });
         const posts = postData.map((post) => post.get({ plain: true }));
-        res.render('all-posts', { posts, loggedIn: req.session.loggedIn });
+        res.render('all-posts', { posts, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500),json(err);
     }
@@ -27,7 +27,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
         if (postData) {
             const post = postData.get({ plain: true });
             console.log(post);
-            res.render('single-post', { post, loggedIn: req.session.loggedIn});
+            res.render('single-post', { post, logged_in: req.session.loggedIn});
         } else {
             res.status(400).end();
         }
@@ -37,7 +37,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }
@@ -45,7 +45,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }

@@ -15,7 +15,7 @@
         <ul>
             <li class="li-inline nav-item"><a href="/">Homepage</a></li>
             <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-            {{#if loggedIn}}
+            {{#if logged_in}}
             <li class="li-inline nav-item"><a href="/"></a>Logout</li>
             {{else}}
             <li class="li-inline nav-item"><a href="/login"></a>Login</li>
@@ -28,7 +28,7 @@
     <main class="col-auto">
         {{{body}}}
     </main>
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <script src="/public/js/logout.js"></script>
     {{/if}}
 </body>
