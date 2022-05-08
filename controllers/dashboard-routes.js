@@ -6,10 +6,10 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
             where:{'user_id': req.session.user_id},
-            include: [User]
+            include: User
         });
         const posts = postData.map((post) => post.get({ plain: true }));
-        // console.log(posts);
+        console.log(posts);
         res.render('all-posts', {
             layout: 'dashboard',
             posts,
@@ -19,12 +19,18 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('edit/:id', withAuth, async (req, res) => {
+router.get('/new', withAuth, (req, res) => {
+    res.render('new-post', {
+        layout: 'dashboard',
+    });
+});
+
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
         if (postData) {
             const post = postData.get({ plain: true });
-            // console.log(post);
+            console.log(post);
             res.render('edit-post', {
                 layout: 'dashboard',
                 post,
