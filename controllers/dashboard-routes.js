@@ -43,24 +43,24 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
-// router.get('/post/:id', withAuth, async (req, res) => {
-//     try {
-//         const postData = await Post.findByPk(req.params.id, 
-//             {include: User}
-//             );
-//         if (postData) {
-//             const post = postData.get({ plain: true });
-//             console.log(post);
-//             res.render('single-post', {
-//                 layout: 'dashboard',
-//                 post,
-//             });
-//         } else { 
-//             res.status(400).end();
-//         }
-//     } catch (err) {
-//         res.redirect('login');
-//     }
-// });
+router.get('/post/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, 
+            {include: User}
+            );
+        if (postData) {
+            const post = postData.get({ plain: true });
+            console.log(post);
+            res.render('single-post', {
+                layout: 'dashboard',
+                post,
+            });
+        } else { 
+            res.status(400).end();
+        }
+    } catch (err) {
+        res.redirect('login');
+    }
+});
 
 module.exports = router;
