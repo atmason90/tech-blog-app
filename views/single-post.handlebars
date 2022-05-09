@@ -10,6 +10,9 @@
     <p class="card-body">{{post.post_body}}</p>
 </div>
 <input type="hidden" name="post-id" value="{{post.id}}">
+{{!-- {{#if userOwned}}
+<a href="/api/post/:id">Edit Post</a>
+{{/if}} --}}
 <div class="card">
     <div class="card-header"></div>
     <form class="card-body" id="new-comment-form">
