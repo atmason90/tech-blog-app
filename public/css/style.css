@@ -120,7 +120,7 @@
     padding: 3% 4%;
     background-color: var(--dark);
     color: var(--primary);
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'VT323', monospace;
   }
   
   .hero p {
