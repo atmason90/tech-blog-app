@@ -3,7 +3,6 @@ const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-    const isDash = true;
     try {
         const postData = await Post.findAll({
             where:{'user_id': req.session.user_id},
@@ -11,10 +10,9 @@ router.get('/', withAuth, async (req, res) => {
         });
         const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts);
-        res.render('all-posts', {
+        res.render('all-posts-dashboard', {
             layout: 'dashboard',
             posts,
-            isDash
         });
     } catch (err) {
         res.redirect('login');

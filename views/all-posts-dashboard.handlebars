@@ -9,11 +9,7 @@
 {{#if posts.length}}
 <div class="card flex-column">
     {{#each posts as |post|}}
-    {{#if isDash}}
     {{>editItem post}}
-    {{else}}
-    {{>singleItem post}}
-    {{/if}}
     {{/each}}
 </div>
 {{/if}}
