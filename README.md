@@ -23,6 +23,8 @@ The Tech Blog Application allows for creation of user accounts, login/logout fun
 
 ## Screenshot
 
+![Screen Shot 2022-05-09 at 7 01 19 PM](https://user-images.githubusercontent.com/99947655/167529565-0c6a8a18-615a-4f4b-b25c-b8c0aaeb6678.png)
+
 ## Code Examples
 
 This example shows how I structured my handlebars file for the homepage of the application.
