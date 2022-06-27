@@ -6,6 +6,12 @@ Deployed Application: https://the-tech-blog-am.herokuapp.com/
 
 GitHub Repository: https://github.com/atmason90/tech-blog-app
 
+## Usage Instructions
+- Navigate to the deployed application: https://the-tech-blog-am.herokuapp.com/  
+- Click login to login or signup for an account
+- Click on posts to view or leave comments
+- Navigate to the dashboard page to view your posts or create new posts
+
 ## Table of Contents
 
 - [Description](#description)
